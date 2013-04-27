@@ -16,11 +16,13 @@
     "default_attributes": {
         "rbenv": {
             "rubies": ["1.9.3-p392"],
+            "global": "1.9.3-p392",
             "gems": {
                 "1.9.3-p392": [
                     { "name": "bundler" },
                     { "name": "foreman" },
-                    { "name": "unicorn" }
+                    { "name": "unicorn" },
+                    { "name": "rack" }
                 ]
             }
         }
