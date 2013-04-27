@@ -1,9 +1,5 @@
 # -*- mode: ruby -*-
 site "http://community.opscode.com/api/v1"
 
-cookbook 'git'
-cookbook 'build-essential'
-cookbook 'openssh'
-cookbook 'rbenv'
-cookbook 'application'
-cookbook 'application_ruby'
+cookbook 'ruby_build', :git => "git://github.com/fnichol/chef-ruby_build"
+cookbook 'rbenv', :git => "git://github.com/fnichol/chef-rbenv"

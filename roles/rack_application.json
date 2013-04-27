@@ -1,0 +1,28 @@
+{
+    // Some settings that are necessary for the Chef Solo to work
+    // as expected. If you use the Ruby DSL rather than JSON you
+    // can omit a few of these.
+    "name": "rack_application",
+    "description": "A simple role for a Rack application.",
+    "chef_type": "role",
+    "json_class": "Chef::Role",
+
+    // All of the recipes that we want to load into the VM.
+    "run_list": [
+        "recipe[ruby_build]",
+        "recipe[rbenv::system]"
+    ],
+
+    "default_attributes": {
+        "rbenv": {
+            "rubies": ["1.9.3-p392"],
+            "gems": {
+                "1.9.3-p392": [
+                    { "name": "bundler" },
+                    { "name": "foreman" },
+                    { "name": "unicorn" }
+                ]
+            }
+        }
+    }
+}
