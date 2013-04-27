@@ -23,4 +23,9 @@ Vagrant.configure("2") do |config|
     chef.data_bags_path = "data_bags"
     chef.add_role "rack_application"
   end
+
+  # After the initial Chef Solo provisioning we want to start up the
+  # Rack application. This can be done using a custom cookbook but I felt
+  # like it was easier if you just saw the commands happening.
+  config.vm.provision :shell, :path => "script/after_provision.sh"
 end
